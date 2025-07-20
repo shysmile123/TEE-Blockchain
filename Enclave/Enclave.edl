@@ -1,0 +1,23 @@
+enclave {
+    trusted {
+        public void process_data([in, size=len] const char* data, size_t len);
+       // public void ecall_calculate_sum([in] int a, [in] int b,);
+    };
+    
+    untrusted {
+        void ocall_print([in, string] const char* str);
+    };
+};
+
+
+
+// enclave {
+//     trusted {
+//         public sgx_status_t generate_report([in] sgx_target_info_t* target_info,
+//                                           [out] sgx_report_t* report);
+//     };
+    
+//     untrusted {
+//         // 定义可信Enclave可以调用的不可信函数
+//     };
+// };
